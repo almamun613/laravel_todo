@@ -35,8 +35,17 @@
                         <div class="card-body">
                             <h5 class="card-title"> {{ $todo->name }}</h5>
                             <p class="card-text">{{ $todo->task }}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+
+                            @if($todo->status !='complete')
+
+                                <a href="{{route('edit.show',[$todo->id])}}" class="btn btn-primary">Edit</a>
+                                <a href="{{route('todo.changeStatus',[$todo->id,'complete'])}}" class="btn btn-success">Mark as complete</a>
+                                <a href="{{ route('task.delete',[$todo->id]) }}" onclick="return confirm('are you sure');" class="btn btn-danger">Delete</a>
+                            @else
+                                <a href="" class="btn btn-success disabled">Completed!</a>
+                            @endif
+
+                         </div>
                     </div>
                 </div>
             @endforeach

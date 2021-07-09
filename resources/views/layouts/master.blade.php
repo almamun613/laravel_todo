@@ -17,7 +17,9 @@
     <!--[if lt IE 9]>
     <script src="{{asset('http://html5shim.googlecode.com/svn/trunk/html5.js')}}"></script>
     <![endif]-->
+{{--
     <script src="{{asset('assets/js/modernizr.custom.js')}}"></script>
+--}}
     @stack('css')
 </head>
 <body>

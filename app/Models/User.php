@@ -16,11 +16,12 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
+   /* protected $fillable = [
         'name',
         'email',
         'password',
-    ];
+    ];*/
+    protected $guarded=[];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //This function will determine that weather the relationship will to one to one or many to one or whatever it is
+    public function todos(){
+        return $this->hasMany(Todo::class);
+    }
 }

@@ -47,7 +47,9 @@
 <script src="assets/js/masonry.pkgd.min.js"></script>
 <script src="assets/js/imagesloaded.js"></script>
 <script src="assets/js/jquery.nicescroll.min.js"></script>
+{{--
 <script src="assets/js/validate.js"></script>
+--}}
 <script src="assets/js/AnimOnScroll.js"></script>
 <script>
     new AnimOnScroll( document.getElementById( 'grid' ), {
@@ -74,7 +76,9 @@
     });
 </script>
 
+{{--
 <script src="assets/js/custom.js"></script>
+--}}
 <script type="text/javascript">
     // When the window has finished loading create our google map below
     google.maps.event.addDomListener(window, 'load', init);

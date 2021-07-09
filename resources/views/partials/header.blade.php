@@ -17,9 +17,12 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><nav>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="current"><a href="#intro">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#works">Works</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            @if(Auth::check())
+                                <li><a href="{{route('user.logout')}}">({{Auth::user()->username}})Logout</a></li>
+                            @else
+                                <li><a href="{{route('loginPlease')}}">Login</a></li>
+                                <li><a href="{{route('user.register.show')}}">Register</a></li>
+                            @endif
                         </ul></nav>
                 </div><!-- /.navbar-collapse -->
             </div>
